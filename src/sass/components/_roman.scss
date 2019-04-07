@@ -1,0 +1,77 @@
+.roman{
+    
+    background: linear-gradient(to top, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    height: 100%;
+    width: 100%;
+    
+
+    &__top,
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    &__header{
+        
+        font-size: 3rem;
+        color: rgb(236, 236, 236);
+        margin: 7rem 0 3rem 0;
+        text-transform: capitalize;
+ 
+        &-1,
+        &-2{
+            color: black;
+            font-size: 4rem;
+            font-weight: 700;
+
+        }
+        &-2{
+
+        }
+    }
+    &__input{
+        font-family: inherit;
+        color: rgb(34, 34, 34);
+        border: none;
+        height: 2.5rem;
+        width: 19rem;
+        border-radius: 100px;
+        padding: 0 2rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        font-size: 1.5rem;
+              
+   
+        &:focus{
+            outline: none;
+        }
+    }
+    &__btn{
+        border: none;
+        padding: 1rem 4rem;
+        color: white;
+        border-radius: 1rem;
+        background-color: rgb(0, 29, 126);
+        margin-bottom: 5rem;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+        
+            transform: translateY(-.5rem);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        }
+        &:active{
+            transform: translateY(-.3rem);
+            background-color: darken( rgb(0, 29, 126), 15%);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        
+    }
+}

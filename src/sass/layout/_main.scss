@@ -1,0 +1,44 @@
+.container{
+    display: grid;
+
+
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-columns: [sidebar-start]minmax(1rem, .35fr) [sidebar-end] 1fr minmax(10rem, .35fr);
+
+
+
+}
+.sidebar{
+    background-color: blue;
+    color: #fff;
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 2 / 3;
+
+}
+
+.header{
+    grid-row: 1 /2;
+    grid-column: 1 /-1;
+    background-color: green;
+}
+
+.discription{
+    grid-row: 2 / 3;
+    grid-column: 3/4;
+}
+
+
+.features-project{
+    background-color: gray;
+    color: #fff;
+    grid-column: 2 /3;
+    grid-row: 2 /-1;
+
+}
+.footer{
+    background-color: red;
+
+    grid-row: 3 / -1;
+    grid-column: 1 /-1;
+
+}
