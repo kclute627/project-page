@@ -43,10 +43,38 @@
         margin-bottom: 2.5rem;
         text-align: center;
         font-size: 1.5rem;
+        transition: all .3s;
               
    
         &:focus{
             outline: none;
+            transform: scaleX(1.2);
+        }
+
+        &-error{
+            
+           
+            display: flex;
+            align-content: center;
+            align-items: center;
+            border-radius: 10rem;
+            
+            padding: 1rem;           
+            background-color: rgb(172, 172, 172);
+            color: black;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+
+            & p {
+                margin-left: 1.5rem;
+            }
+
+            & svg{
+                fill:red;
+                height: 100%;
+              
+            }
+
         }
     }
     &__btn{

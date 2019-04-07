@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {ReactComponent as Warning} from '../assets/Svg/warning.svg'
 
 
 
@@ -10,6 +11,7 @@ class Roman extends Component{
         currentNum: '',
         finalNumber: '',
         roman: null,
+        error: false,
     }
 
     numberHandler = (event) => {
@@ -21,12 +23,26 @@ class Roman extends Component{
 
     submitHandler = (num) => {
 
-        let numStart = parseInt(num);
+        let numStart = num;
         let romanNum = '';
+        let isNumber = null;
+
+        isNumber = !isNaN(numStart);
+
+        if(!isNumber || num > 4000){
+            this.setState({
+                currentNum: '',
+                error: true,
+                roman: null,
+                
+            })
+        }
+
 
         // run test on num
 
-        while(numStart > 0){
+        while(numStart > 0 && isNumber && num <= 4000){
+            numStart = parseInt(numStart);
 
       
         if(numStart >= 1000){
@@ -75,6 +91,8 @@ class Roman extends Component{
 
             roman: romanNum,
             currentNum: '',
+            error: false,
+
         })
     }
     
@@ -82,8 +100,13 @@ class Roman extends Component{
        console.log(`numStart =  ${numStart} ---- romanNum =${romanNum}`)
 
     }
+    
+    
 
     render(){
+        
+
+              
 
 
 
@@ -99,6 +122,9 @@ class Roman extends Component{
                         onChange={this.numberHandler}
                         >
                         </input>
+                        {this.state.error ? <div className="roman__input-error">
+                           <Warning /> <p>Please enter a number between 1 and 4000</p>
+                        </div> : null}
                         <button 
                         className="roman__btn"
                         type="submit"
@@ -113,8 +139,7 @@ class Roman extends Component{
                 </div>: null}
                 
             </div>
-        )
-    }
+        )}
 }
 
 export default Roman
