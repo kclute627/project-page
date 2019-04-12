@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Roman from '../components/Roman';
+import Project from '../components/Project';
+import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
 
 
 
@@ -11,19 +14,12 @@ class Homepage extends Component {
 
         return(
             <div className ="container">
-                <header className = "header">
-                Header
                 
-                </header>
-                <div className="sidebar">
-                Sidebar
-                </div>
-                <section className="features-project">
-
+                <Header/>                             
+                <Sidebar/>
+                <Project /> 
                 
-                <Roman />
-
-                </section>
+                
                 <div className="discription">
                     Talk about current project
 
