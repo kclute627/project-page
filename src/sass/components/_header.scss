@@ -13,5 +13,24 @@
         width: 7rem;
         border-radius: 1000px;
         margin-right: 3rem;
+        margin-left: auto;
     }
+    &__text{
+        margin-right: auto;
+        
+    }
+    &__location{
+        margin-right: 4rem;
+        display: flex;
+        align-items: center;
+
+        &-text{
+            font-size: 1.5rem;
+        }
+
+        & svg {
+            margin-right: .5rem;
+        }
+    }
+    
 }

@@ -3,6 +3,7 @@ import Roman from '../components/Roman';
 import Project from '../components/Project';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 
@@ -25,7 +26,7 @@ class Homepage extends Component {
 
                 </div>
                 <footer className="footer">
-                Footer
+                <Footer/>
 
                 </footer>
             
