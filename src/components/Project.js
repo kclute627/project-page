@@ -1,19 +1,25 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import Roman from '../components/Roman';
 
 
 
 
-const project = (props)=> {
+class Project extends Component {
 
 
-    return(
-        <section className="features-project">
-            <Roman />
+    state = {
+        currentProject: 'Roman'
+    }
+    render(){
+        return(
+            <section className="features-project">
+                {this.state.currentProject === 'Roman' ? <Roman/> : null}
+    
+            </section>
+        )
 
-        </section>
-    )
+    }
 }
 
-export default project;
+export default Project;
