@@ -22,7 +22,7 @@ class Header extends Component{
                         <h1>Front End Web-Developer</h1>
                     </div>
                     <div className="header__location">
-                        <Pin classname="header__icon-pin"/>
+                        <Pin className="header__icon-pin"/>
                         <p className="header__location-text">Chicago, IL</p>
 
                     </div>

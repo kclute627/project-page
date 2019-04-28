@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ReactComponent as Warning} from '../assets/Svg/warning.svg'
+import {ReactComponent as Warning} from '../../assets/Svg/warning.svg'
 
 
 

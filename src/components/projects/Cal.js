@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 
 
 
-class Tic extends Component {
+class Cal extends Component {
 
     render(){
 
 
         return(
-            <div>
-                Tic Tack Toe
+            <div >
+                <h1>Calculator</h1>
             </div>
         )
     }
 }
 
 
-export default Tic;
+export default Cal;

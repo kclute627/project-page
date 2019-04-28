@@ -9,13 +9,16 @@ const reducer = (state = initialState, action)=>{
         case actionTypes.SET_PROJECT:
         return{
             ...state,
-            projectName: action.value
+            projectName: action.value,
+            loading: false,
         }
         default: 
         return state;
 
     }
 }
+
+console.log(initialState)
 
 
 export default reducer
