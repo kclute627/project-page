@@ -8,7 +8,7 @@ import {ReactComponent as Warning} from '../../assets/Svg/warning.svg'
 class Roman extends Component{
 
     state = {
-        currentNum: '',
+        currentNum: null,
         finalNumber: '',
         roman: null,
         error: false,
@@ -126,6 +126,7 @@ class Roman extends Component{
                            <Warning /> <p>Please enter a number between 1 and 4000</p>
                         </div> : null}
                         <button 
+                        disabled = {!this.state.currentNum}
                         className="roman__btn"
                         type="submit"
                         onClick={(num) => this.submitHandler(this.state.currentNum)}>Submit</button>

@@ -1,0 +1,14 @@
+@mixin box {
+    height: 6rem;
+    width: 8rem;
+    outline: 1px solid black;
+    
+}
+@mixin text-box{
+    height: 100%;
+    width: 100%;
+    font-size: 4rem;
+    color: black;
+    text-align: center;
+    text-transform: capitalize;
+}
