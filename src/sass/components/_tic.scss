@@ -4,6 +4,7 @@
     grid-template-columns: 1fr minmax(45em, 1fr) 1fr;
     
     grid-gap: 2rem;
+    justify-items: center;
 
 
 
@@ -123,8 +124,39 @@
         display: flex;
         color: black;
         font-size: 3rem;
-        justify-content: space-between;
+        justify-content: space-around;
+
+        &-1{
+            margin-right: 5rem;
+            text-align: center;
+            & p{
+                color: green;
+            }
+        }
+        &-2{
+            text-align: center;
+            & p{
+                color: red;
+            }
+        }
        
     }
 
+}
+
+.signin{
+    grid-row: 2 / 4;
+    grid-column: 2/3;
+
+    
+
+
+    &__header{
+        color: black;
+        text-align: center;
+    }
+
+    &__content {
+      
+    }
 }
