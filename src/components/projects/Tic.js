@@ -14,6 +14,7 @@ class Tic extends Component {
                 ],
         player1Name: '',
         player2Name: '',
+        currentPlayer: 'player2'
 
     }
 
@@ -28,46 +29,108 @@ class Tic extends Component {
         })
     }
 
+    // determine what player it is 
+
+
+    // switch user after every turn 
+    switchUser = () => {
+        let currentUser = this.state.currentPlayer;
+
+        if(currentUser === 'player1'){
+            this.setState({currentPlayer: 'player2'})
+        }else{
+            this.setState({currentPlayer: 'player1'})
+        }
+    }
+
+
+    // add a x or an o to each square onClick 
+    addLetterHandler = (location1, location2)=> {
+        if(this.state.currentPlayer === 'player1'){
+            let newGameMap = this.state.gameMap;
+            newGameMap[location1][location2] = 'X'
+            this.setState({
+                gameMap: [...newGameMap]
+            })
+        }else{
+            let newGameMap = this.state.gameMap;
+            newGameMap[location1][location2] = 'O'
+            this.setState({
+                gameMap: [...newGameMap]
+            })
+        }
+        this.switchUser();
+    }
+
+    // check for a winner after every turn 
+
     render(){
 
-        const { startPage, gameMap, player1Name, player2Name } = this.state;
+        const { startPage, gameMap, player1Name, player2Name, currentPlayer } = this.state;
         
         const mainGame = (
             <Fragment>
                  <div className="tic__score">
-                    <div className="tic__score-top">
-                        <div className="tic__score-top-1">
-                            <p className="tic__score-top-1-text"></p>
+                    <div className="tic__score-top" >
+                        <div className="box">
+                            <p 
+                            className={gameMap[0][0]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[0][0] ? null : ()=> this.addLetterHandler(0,0, currentPlayer)}
+                            >{gameMap[0][0]}</p>
                         </div>
-                        <div className="tic__score-top-2">
-                            <div className="tic__score-top-2-text"></div>
+                        <div className="box">
+                            <p 
+                            className={gameMap[0][1]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[0][1] ? null : ()=> this.addLetterHandler(0,1, currentPlayer)}>
+                            {gameMap[0][1]}</p>
                         </div>
-                        <div className="tic__score-top-3">
-                            <div className="tic__score-top-3-text"></div>
+                        <div className="box">
+                            <p 
+                            className={gameMap[0][2]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[0][2] ? null : ()=> this.addLetterHandler(0,2, currentPlayer)}>
+                            {gameMap[0][2]}</p>
                         </div>
                         
                     </div>
                     <div className="tic__score-middle">
-                        <div className="tic__score-middle-1">
-                            <p className="tic__score-middle-1-text"></p>
+                        <div className="box">
+                            <p 
+                            className={gameMap[1][0]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[1][0] ? null : ()=> this.addLetterHandler(1,0, currentPlayer)}
+                            >{gameMap[1][0]} </p>
                         </div>
-                        <div className="tic__score-middle-2">
-                            <p className="tic__score-middle-2-text"></p>
+                        <div className="box">
+                            <p 
+                            className={gameMap[1][1]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[1][1] ? null : ()=> this.addLetterHandler(1,1, currentPlayer)}
+                            >{gameMap[1][1]}</p>
                         </div>
-                        <div className="tic__score-middle-3">
-                            <p className="tic__score-middle-3-text"></p>
+                        <div className="box">
+                            <p 
+                            className={gameMap[1][2]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[1][2] ? null : ()=> this.addLetterHandler(1,2, currentPlayer)}
+                            >{gameMap[1][2]}</p>
                         </div>
                         
                     </div>
                     <div className="tic__score-bottom">
-                        <div className="tic__score-bottom-1">
-                            <p  className="tic__score-bottom-1-text"></p>
+                        <div className="box">
+                            <p  
+                            className={gameMap[2][0]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[2][0] ? null : ()=> this.addLetterHandler(2,0, currentPlayer)}
+                            >{gameMap[2][0]}</p>
                         </div>
-                        <div className="tic__score-bottom-2">
-                            <p  className="tic__score-bottom-2-text"></p>
+                        <div className="box">
+                            <p  
+                            className={gameMap[2][1]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[2][1] ? null : ()=> this.addLetterHandler(2,1, currentPlayer)}
+                            >{gameMap[2][1]}</p>
                         </div>
-                        <div className="tic__score-bottom-3">
-                            <p  className="tic__score-bottom-3-text"></p>
+                        <div className="box">
+                            <p  
+                            className={gameMap[2][2]==='X' ? "text green" : "text red"}
+                            onClick={gameMap[2][2] ? null : ()=> this.addLetterHandler(2,2, currentPlayer)}
+                            >{gameMap[2][2]}</p>
                         </div>                    
                     </div>
                 </div>
