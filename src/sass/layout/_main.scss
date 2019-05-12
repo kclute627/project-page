@@ -11,7 +11,7 @@ $gray-background:  rgb(197, 197, 197);
     display: grid;
 
 
-    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-rows: 15vh 75vh 10vh;
     grid-template-columns: [sidebar-start]minmax(1rem, .35fr) [sidebar-end] 1fr minmax(10rem, .35fr);
 
 

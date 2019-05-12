@@ -3,6 +3,7 @@
 
     grid-template-columns: 1fr minmax(45em, 1fr) 1fr;
     
+    
     grid-gap: 2rem;
     justify-items: center;
 
@@ -16,7 +17,7 @@
         font-weight: 300;        
 
         color: black;
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
 
@@ -27,6 +28,7 @@
         grid-column: 2/ 3;
         justify-self: center;
         margin-top: 3rem;   
+        background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
         
 
 
@@ -53,6 +55,7 @@
         color: black;
         font-size: 3rem;
         justify-content: space-around;
+        animation: all 4s;
 
         &-1{
             margin-right: 5rem;
@@ -100,10 +103,42 @@
 }    
 
 .green{
-    color: green;
+    color: rgb(34, 202, 48);
 }
 .red{
-    color: red;
+    color: rgb(141, 0, 0);
+}
+.currentPlayer{
+    background-color: rgba(5, 255, 5, 0.3);
+    animation: all 4s;
+}
+.winnerPage{
+    background-image: rgba(0,0,0, .05);
+    border: 1px solid black;
+    
+    width: 100%;
+    text-align: center;
+
+    &__text{
+        font-size: 2.7rem;
+        color: black;
+        margin-bottom: 1rem;
+
+        
+    }
+    & button{
+        
+        padding: 1rem;
+        color: white;
+        background-color: blue;
+        margin-bottom: 2rem;
+        cursor: pointer;
+
+        :hover{
+            background-color: lighten(blue, 25%);
+        }
+
+    }
 }
 
     
